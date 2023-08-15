@@ -1,0 +1,301 @@
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    margin: 0;
+    overflow-x: hidden;
+}
+
+.background-container{
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    top: 0;
+    left: 0;
+    background-image: url(pictures/backpic2.jpg);
+    z-index: -1;
+
+}
+
+/*NAVIGATION PAGE */
+.naviPage{
+    display: grid;
+    grid-template-columns: 0.3fr 1fr 1fr 1fr 1fr 0.3fr;
+    grid-template-rows: 1fr 1fr 2fr ;
+    column-gap: 2em;
+    height: 75vh;
+    width: 60vw;
+    background-color: #75638b;
+    color: #dac291;
+    margin: auto;
+    margin-top: 20px;
+    border: 40px solid;
+    border-image-source: url(pictures/border.png);
+    border-image-slice: 70;
+}
+#nameDisp{
+    grid-area: 1 / 2 / 2 / 7;
+    justify-self: start;
+    align-self: end;
+    font-size: 8em;
+    margin: 0;
+    padding: 0;
+
+}
+
+#description{
+    grid-area: 2/2/3/7;
+    font-size: 2.5em;
+    align-self: flex-end;
+    
+}
+
+#AboutMeIcon{
+    grid-area: 3/2/4/3;
+}
+
+#ResumeIcon{
+    grid-area: 3/3/4/4;
+}
+
+#SocialsIcon{
+    grid-area: 3/4/4/5;
+}
+
+#ProjectsIcon{
+    grid-area: 3/5/4/6;
+}
+
+
+.neonBtn{
+    font-size: 2rem;
+    justify-self: center;
+    text-align: center;
+    align-self: center;
+    display: inline-block;
+    cursor: pointer;
+    text-decoration: none;
+    color: #dac291;
+    border:#dac291 0.125em solid;
+    padding: 0.25em 1em;
+    border-radius: 0.25em;
+    text-shadow: 0 0 0.125em hsl(0 0% 100%/0.3),
+    0 0 0.25em #dac291;
+
+    box-shadow:inset 0 0 0.5em 0 #dac291,
+    0 0 0.5em 0 #dac291;
+
+    position: relative;
+
+    transition: background-color 100ms linear;
+}
+
+.neonBtn::before{
+    pointer-events: none;
+    content: '';
+    position: absolute;
+    background:#dac291;
+    top: 110%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    transform: perspective(1em) rotateX(30deg)
+    scale(1, 0.35);
+    filter: blur(1.5em);
+    opacity: 0.7;
+}
+
+.neonBtn::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    box-shadow: 0 0 2em 0.5em #dac291;
+    opacity: 0;
+    transition: opacity 100ms linear;
+}
+
+.neonBtn:hover, .neonBtn:focus{
+    background: #dac291;
+    color: #75638b;
+    text-shadow: none;
+}
+
+.neonBtn:hover::before{
+    opacity: 1;
+}
+
+.neonBtn:hover::after{
+    opacity: 1;
+}
+
+
+.introPage{
+    display: grid;
+    grid-template-rows: 2.5fr 6fr 5fr;
+    grid-template-columns: 1fr 3fr 5fr 1fr;
+    height: 100vh;
+    width: 100vw;
+    background-image: url(pictures/bg3.gif);
+    margin-top: 140px;
+    
+}
+
+#pic{
+    grid-area: 2 / 2 / 3 / 3;
+    justify-self: center;
+    align-self: center;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+#aboutme{
+    grid-area: 2 / 3 / 3 / 4;
+    justify-self: center;
+    align-self: center;
+    font-size: 35px;
+    color: #A6E4FF;
+    font-family: 'Montserrat', sans-serif;
+}
+
+#aboutme2{
+    grid-area: 3 / 2 / 4 /4;
+    justify-self: center;
+    align-self: center;
+    font-size: 30px;
+    color: #FFFDD9;
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+.socialsPage{
+    display: grid;
+    grid-template-rows: 1fr 3fr 2fr;
+    height: 100vh;
+    width: 100vw;
+    background-image: url(pictures/bg4.jpg);
+    color: #dbd3d8;
+}
+.icons{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.icons .fa-facebook:hover{
+    transform: scale(1.10);
+}
+
+#contact-me{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3rem;
+    align-self: flex-end;
+}
+
+
+.contact-card-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-self: flex-start;
+    align-items: center;
+    font-size: 2rem;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.hidden{
+    opacity: 0;
+    transition: all 1s;
+    filter: blur(5px);
+    transform: translateX(-100%);
+}
+
+@media(prefers-reduced-motion){
+    .hidden{
+        transition:none;
+    }
+}
+
+.show{
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
+}
+
+
+
+.projectsPage{
+    display: grid;
+    grid-template-columns: 1fr 2fr 2fr 1fr;
+    grid-template-rows: 1fr 0.75fr 1fr 1fr;
+    column-gap: 70px;
+    row-gap: 50px;
+    height: 100vh;
+    width: 100vw;
+    background-image: url(pictures/bg5.avif);
+    margin: 0;
+    padding: 0;
+}
+
+#portfolio{
+    grid-area: 1/2/2/4;
+    justify-self: center;
+    align-self: center;
+    font-size: 3em;
+    font-family: 'Montserrat', sans-serif;
+}
+
+#ambiTag{
+    border: firebrick 0.45em solid;
+    padding: 1.5em;
+    font-family: 'Montserrat', sans-serif;
+    text-decoration: none;
+    grid-area: 2/2/3/3;
+    justify-self: center;
+    align-self: center;
+}
+
+#ambiTag:hover{
+    color: #A6E4FF;
+    background-image: url(pictures/backpic.jpg);
+}
+
+#websiteTag{
+    border: seagreen 0.45em solid;
+    padding: 1.5em;
+    font-family: 'Montserrat', sans-serif;
+    text-decoration: none;
+    grid-area: 2/3/3/4;
+    justify-self: center;
+    align-self: center;
+}
+
+#websiteTag:hover {
+    color: #A6E4FF;
+    background-image: url(pictures/backpic.jpg);
+}
+
+#about-ambisphere{
+    grid-area: 3/2/4/3;
+    font-size: 1.5em;
+    font-family: 'Montserrat', sans-serif;
+    justify-self: center;
+    align-self: center;
+}
+
+
+#about-website{
+    grid-area: 3/3/4/4;
+    font-size: 1.5em;
+    font-family: 'Montserrat', sans-serif;
+    justify-self: center;
+    align-self: center;
+}
