@@ -5,6 +5,7 @@ html{
 body{
     margin: 0;
     overflow-x: hidden;
+
 }
 
 .background-container{
@@ -18,12 +19,10 @@ body{
 
 }
 
-/*NAVIGATION PAGE */
 .naviPage{
-    display: grid;
-    grid-template-columns: 0.3fr 1fr 1fr 1fr 1fr 0.3fr;
-    grid-template-rows: 1fr 1fr 2fr ;
-    column-gap: 2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
     height: 75vh;
     width: 60vw;
     background-color: #75638b;
@@ -35,38 +34,21 @@ body{
     border-image-slice: 70;
 }
 #nameDisp{
-    grid-area: 1 / 2 / 2 / 7;
-    justify-self: start;
-    align-self: end;
-    font-size: 8em;
-    margin: 0;
-    padding: 0;
-
+    font-size: 6rem;
+    margin-top: -5rem;
+    margin-left: 1rem;
 }
 
 #description{
-    grid-area: 2/2/3/7;
-    font-size: 2.5em;
-    align-self: flex-end;
-    
+    font-size: 2.5rem;
+    margin-top: -4rem;
+    margin-left: 1rem;
 }
 
-#AboutMeIcon{
-    grid-area: 3/2/4/3;
+.links{
+    display: flex;
+    justify-content: space-evenly;
 }
-
-#ResumeIcon{
-    grid-area: 3/3/4/4;
-}
-
-#SocialsIcon{
-    grid-area: 3/4/4/5;
-}
-
-#ProjectsIcon{
-    grid-area: 3/5/4/6;
-}
-
 
 .neonBtn{
     font-size: 2rem;
@@ -140,6 +122,7 @@ body{
     grid-template-columns: 1fr 3fr 5fr 1fr;
     height: 100vh;
     width: 100vw;
+    column-gap: 3vw;
     background-image: url(pictures/bg3.gif);
     margin-top: 140px;
     
@@ -158,7 +141,7 @@ body{
     grid-area: 2 / 3 / 3 / 4;
     justify-self: center;
     align-self: center;
-    font-size: 35px;
+    font-size: 2rem;
     color: #A6E4FF;
     font-family: 'Montserrat', sans-serif;
 }
@@ -167,7 +150,7 @@ body{
     grid-area: 3 / 2 / 4 /4;
     justify-self: center;
     align-self: center;
-    font-size: 30px;
+    font-size: 1.75rem;
     color: #FFFDD9;
     font-family: 'Montserrat', sans-serif;
 }
@@ -237,7 +220,7 @@ body{
     grid-template-columns: 1fr 2fr 2fr 1fr;
     grid-template-rows: 1fr 0.75fr 1fr 1fr;
     column-gap: 70px;
-    row-gap: 50px;
+    row-gap: 5vw;
     height: 100vh;
     width: 100vw;
     background-image: url(pictures/bg5.avif);
@@ -249,12 +232,11 @@ body{
     grid-area: 1/2/2/4;
     justify-self: center;
     align-self: center;
-    font-size: 3em;
     font-family: 'Montserrat', sans-serif;
 }
 
 #ambiTag{
-    border: firebrick 0.45em solid;
+    /*border: firebrick 0.45em solid;*/
     padding: 1.5em;
     font-family: 'Montserrat', sans-serif;
     text-decoration: none;
@@ -263,13 +245,9 @@ body{
     align-self: center;
 }
 
-#ambiTag:hover{
-    color: #A6E4FF;
-    background-image: url(pictures/backpic.jpg);
-}
 
 #websiteTag{
-    border: seagreen 0.45em solid;
+    /*border: seagreen 0.45em solid;*/
     padding: 1.5em;
     font-family: 'Montserrat', sans-serif;
     text-decoration: none;
@@ -278,10 +256,6 @@ body{
     align-self: center;
 }
 
-#websiteTag:hover {
-    color: #A6E4FF;
-    background-image: url(pictures/backpic.jpg);
-}
 
 #about-ambisphere{
     grid-area: 3/2/4/3;
@@ -297,5 +271,165 @@ body{
     font-size: 1.5em;
     font-family: 'Montserrat', sans-serif;
     justify-self: center;
-    align-self: center;
+    align-self: self-start;
+}
+
+
+.neomorphicBtn{
+    border: none;
+    border-radius: 50px;
+    background-image: url(pictures/bg5.avif);
+    box-shadow: 10px 10px 10px -1px rgba(10,99,169,0.16),
+                -10px -10px 10px -1px rgba(255, 255, 255, 0.7);
+
+}
+
+.neomorphicBtn.webTag{
+    background-image: url(pictures/bg5.avif);
+    box-shadow: inset 10px 10px 10px -1px rgba(10, 99, 169, 0.16),
+            inset -10px -10px 10px -1px rgba(255, 255, 255, 0.7);
+}
+
+@media(max-width:530px){
+    .icons{
+        font-size: 10px;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+
+    }
+    .contact-card-info{
+        font-size: 1.25rem;
+    }
+
+    #contact-me{
+        font-size: 2rem;
+    }
+}
+
+@media(max-width:600px){
+    .projectsPage{
+        height: 250vw;
+        grid-template-rows: 1fr 2fr 2fr 2fr 2fr;
+        column-gap: 0;
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+    }
+
+    #ambiTag{
+        grid-area: 2/2/3/4;
+        font-size: 3.75vw;
+        object-fit: contain;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+    #about-ambisphere{
+        grid-area: 3/2/4/4;
+        font-size: 3.75vw;
+        align-self: self-start;
+    }
+
+    #about-website{
+        grid-area: 5/2/6/4;
+        align-self: self-start;
+        font-size: 3.75vw;
+    }
+
+    #websiteTag{
+        grid-area: 4/2/5/4;
+        font-size: 5vw;
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@media(max-width:1040px){
+    .introPage{
+        height: 170vw;
+        grid-template-rows: 25% 35% 40%;
+    }
+    #aboutme{
+        font-size: 3.75vw;
+        grid-area: 2/2/3/4;
+    }
+    #aboutme2{
+        font-size: 3.5vw;
+    }
+    #pic{
+        margin-top: 10px;
+        grid-area: 1/2/2/4;
+    }
+}
+
+
+@media(max-width:1460px){
+    .naviPage{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 15% 20% 65%;
+    }
+
+    #nameDisp{
+        font-size: 4rem;
+        justify-self: center;
+        grid-area: 2/1/3/2;
+    }
+
+    #description{
+        grid-area: 3/1/4/2;
+        font-size:2rem;
+    }
+
+    .neonBtn{
+        font-size: 1.5rem;
+    }
+    .links{
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        grid-area: 3/1/4/2;
+        
+    }
+}
+
+@media(max-width:1146px) {
+    .naviPage{
+        height: 110vw;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 15% 20% 65%;
+    }
+
+    #nameDisp{
+        font-size: 6vw;
+        grid-area: 2/1/3/2;
+        justify-content: center;
+    }
+
+    #description{
+        grid-area: 3/1/4/2;
+        font-size:3vw;
+    }
+
+    .neonBtn{
+        font-size: 2.6vw;
+    }
+    .links{
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        grid-area: 3/1/4/2;
+        
+    }
+
+    @media(max-width:778px){
+        #nameDisp{
+            margin-top: -2rem;
+        }
+    }
 }
