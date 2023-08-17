@@ -15,7 +15,7 @@ body{
     top: 0;
     left: 0;
     background-image: url(pictures/backpic2.jpg);
-    z-index: -1;
+    z-index: -100;
 
 }
 
@@ -32,6 +32,7 @@ body{
     border: 40px solid;
     border-image-source: url(pictures/border.png);
     border-image-slice: 70;
+    z-index: 5;
 }
 #nameDisp{
     font-size: 6rem;
@@ -71,6 +72,7 @@ body{
     position: relative;
 
     transition: background-color 100ms linear;
+    z-index: 4;
 }
 
 .neonBtn::before{
@@ -125,7 +127,7 @@ body{
     column-gap: 3vw;
     background-image: url(pictures/bg3.gif);
     margin-top: 140px;
-    
+    z-index: 3;
 }
 
 #pic{
@@ -163,6 +165,7 @@ body{
     width: 100vw;
     background-image: url(pictures/bg4.jpg);
     color: #dbd3d8;
+    z-index: 9;
 }
 .icons{
     display: flex;
@@ -226,6 +229,7 @@ body{
     background-image: url(pictures/bg5.avif);
     margin: 0;
     padding: 0;
+    z-index: 8;
 }
 
 #portfolio{
@@ -427,9 +431,9 @@ body{
         
     }
 
-    @media(max-width:778px){
-        #nameDisp{
-            margin-top: -2rem;
-        }
+@media(max-width:778px){
+    #nameDisp{
+        margin-top: -2rem;
     }
+}
 }
