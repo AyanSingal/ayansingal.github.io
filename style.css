@@ -413,6 +413,7 @@ body{
         font-size: 6vw;
         grid-area: 2/1/3/2;
         justify-content: center;
+        margin-right: 0.7rem;
     }
 
     #description{
