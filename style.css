@@ -311,7 +311,7 @@ body{
     }
 }
 
-@media(max-width:940px){
+@media(max-width:600px){
     .projectsPage{
         height: 250vw;
         grid-template-rows: 1fr 2fr 2fr 2fr 2fr;
@@ -352,7 +352,7 @@ body{
     }
 }
 
-@media(max-width:1105px){
+@media(max-width:1040px){
     .introPage{
         height: 170vw;
         grid-template-rows: 25% 35% 40%;
